@@ -11,8 +11,11 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         HStack {
-            ForEach(0..<4) { index in
-                CardView()
+            ForEach(0..<2) { index in
+                CardView(isFaceUp: true)
+            }
+            ForEach(0..<2) { index in
+                CardView(isFaceUp: false)
             }
         }
             .padding()
@@ -22,11 +25,16 @@ struct ContentView: View {
 }
 
 struct CardView: View {
+    var isFaceUp: Bool
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 12.0).fill(Color.white)
-            RoundedRectangle(cornerRadius: 12.0).stroke(lineWidth: 3)
-            Text("👻")
+            if isFaceUp {
+                RoundedRectangle(cornerRadius: 12.0).fill(Color.white)
+                RoundedRectangle(cornerRadius: 12.0).stroke(lineWidth: 3)
+                Text("👻")
+            } else {
+                RoundedRectangle(cornerRadius: 12.0).fill(Color.orange)
+            }
         }
     }
 }
