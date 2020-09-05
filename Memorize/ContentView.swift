@@ -11,11 +11,8 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         HStack {
-            ForEach(0..<2) { index in
+            ForEach(0..<4) { index in
                 CardView(isFaceUp: true)
-            }
-            ForEach(0..<2) { index in
-                CardView(isFaceUp: false)
             }
         }
             .padding()
