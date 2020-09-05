@@ -12,11 +12,7 @@ struct ContentView: View {
     var body: some View {
         HStack {
             ForEach(0..<4) { index in
-                ZStack {
-                    RoundedRectangle(cornerRadius: 12.0).fill(Color.white)
-                    RoundedRectangle(cornerRadius: 12.0).stroke(lineWidth: 3)
-                    Text("👻")
-                }
+                CardView()
             }
         }
             .padding()
@@ -25,7 +21,15 @@ struct ContentView: View {
     }
 }
 
-
+struct CardView: View {
+    var body: some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: 12.0).fill(Color.white)
+            RoundedRectangle(cornerRadius: 12.0).stroke(lineWidth: 3)
+            Text("👻")
+        }
+    }
+}
 
 
 
