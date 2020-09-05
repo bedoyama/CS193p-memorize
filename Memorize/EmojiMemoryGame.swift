@@ -10,9 +10,7 @@ import SwiftUI
 
 class EmojiMemoryGame {
     private var model: MemoryGame<String> =
-        MemoryGame<String>(numberOfPairsOfCards: 2, cardContentFactory: { pairIndex in
-            return "😜"
-    })
+        MemoryGame<String>(numberOfPairsOfCards: 2) { _ in "😜" }
     
     // MARK: Access to the Model
     
