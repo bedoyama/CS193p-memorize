@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct EmojiMemoryGameView: View {
     var viewModel: EmojiMemoryGame
     
     var body: some View {
@@ -31,11 +31,11 @@ struct CardView: View {
     var body: some View {
         ZStack {
             if card.isFaceUp {
-                RoundedRectangle(cornerRadius: 12.0).fill(Color.white)
-                RoundedRectangle(cornerRadius: 12.0).stroke(lineWidth: 3)
+                RoundedRectangle(cornerRadius: 10.0).fill(Color.white)
+                RoundedRectangle(cornerRadius: 10.0).stroke(lineWidth: 3)
                 Text(card.content)
             } else {
-                RoundedRectangle(cornerRadius: 12.0).fill(Color.orange)
+                RoundedRectangle(cornerRadius: 10.0).fill(Color.orange)
             }
         }
         .aspectRatio(0.66, contentMode: .fit)
@@ -44,6 +44,6 @@ struct CardView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(viewModel: EmojiMemoryGame())
+        EmojiMemoryGameView(viewModel: EmojiMemoryGame())
     }
 }
