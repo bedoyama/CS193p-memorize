@@ -45,9 +45,7 @@ struct CardView: View {
     private func body(for size:CGSize) -> some View {
         ZStack {
             if self.card.isFaceUp {
-                RoundedRectangle(cornerRadius: cornerRadius).fill(Color.white)
-                RoundedRectangle(cornerRadius: cornerRadius).stroke(lineWidth: edgeLineWidth)
-                Text(self.card.content)
+                front(of: self.card)
             } else {
                 if !card.isMatched {
                     RoundedRectangle(cornerRadius: cornerRadius).fill(color)
@@ -56,6 +54,13 @@ struct CardView: View {
         }
         .aspectRatio(self.cardAspectRatio, contentMode: .fit)
         .font(Font.system(size: fontSize(for: size)))
+    }
+
+    @ViewBuilder
+    private func front(of card: MemoryGame<String>.Card) -> some View {
+        RoundedRectangle(cornerRadius: cornerRadius).fill(Color.white)
+        RoundedRectangle(cornerRadius: cornerRadius).stroke(lineWidth: edgeLineWidth)
+        Text(self.card.content)
     }
     
     // MARK: - Drawing Constants
