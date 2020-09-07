@@ -21,6 +21,7 @@
 		2278839C2505BAD9004CFA1E /* MemoryGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2278839B2505BAD9004CFA1E /* MemoryGameViewModel.swift */; };
 		227883A0250691FE004CFA1E /* Pie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2278839F250691FE004CFA1E /* Pie.swift */; };
 		227883A22506BD1F004CFA1E /* Cardify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227883A12506BD1F004CFA1E /* Cardify.swift */; };
+		227883A42506C248004CFA1E /* View+Cardify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227883A32506C248004CFA1E /* View+Cardify.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		2278839B2505BAD9004CFA1E /* MemoryGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGameViewModel.swift; sourceTree = "<group>"; };
 		2278839F250691FE004CFA1E /* Pie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pie.swift; sourceTree = "<group>"; };
 		227883A12506BD1F004CFA1E /* Cardify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cardify.swift; sourceTree = "<group>"; };
+		227883A32506C248004CFA1E /* View+Cardify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Cardify.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				2278839B2505BAD9004CFA1E /* MemoryGameViewModel.swift */,
 				225574D12503EC2A00CB1637 /* MemoryGame.swift */,
 				2278839925058ECF004CFA1E /* Array+Only.swift */,
+				227883A32506C248004CFA1E /* View+Cardify.swift */,
 				225574C32503BB2E00CB1637 /* Assets.xcassets */,
 				225574C82503BB2E00CB1637 /* LaunchScreen.storyboard */,
 				225574CB2503BB2E00CB1637 /* Info.plist */,
@@ -175,6 +178,7 @@
 				225574BE2503BB2C00CB1637 /* AppDelegate.swift in Sources */,
 				2278839C2505BAD9004CFA1E /* MemoryGameViewModel.swift in Sources */,
 				225574C02503BB2C00CB1637 /* SceneDelegate.swift in Sources */,
+				227883A42506C248004CFA1E /* View+Cardify.swift in Sources */,
 				225574D22503EC2A00CB1637 /* MemoryGame.swift in Sources */,
 				2278839A25058ECF004CFA1E /* Array+Only.swift in Sources */,
 				225574C22503BB2C00CB1637 /* MemoryGameView.swift in Sources */,

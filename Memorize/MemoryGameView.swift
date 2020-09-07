@@ -43,7 +43,7 @@ struct CardView: View {
     }
     
     private func body(for size:CGSize) -> some View {
-        Text(card.content).modifier(Cardify(isFaceUp: card.isFaceUp, isMatched: card.isMatched, color: color))
+        Text(card.content).cardify(isFaceUp: card.isFaceUp, isMatched: card.isMatched, color: color)
         .aspectRatio(self.cardAspectRatio, contentMode: .fit)
         .font(Font.system(size: fontSize(for: size)))
     }
