@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct MemoryGameView: View {
-    @ObservedObject var viewModel: MemoryGameVM
+    @ObservedObject var viewModel: MemoryGameViewModel
     
     var body: some View {
         VStack {
@@ -66,6 +66,6 @@ struct CardView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        MemoryGameView(viewModel: EmojiMemoryGame())
+        MemoryGameView(viewModel: MemoryGameViewModel())
     }
 }
