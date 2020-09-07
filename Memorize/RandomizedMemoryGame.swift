@@ -16,7 +16,7 @@ class RandomizedMemoryGame: MemoryGameVM {
     
     static func createMemoryGame() -> MemoryGame<String> {
         let emojis = ["🎉","👠","❤️","🦎","🦑","🤠","🥶"]
-        return MemoryGame<String>(numberOfPairsOfCards: Int.random(in: 2...7), theme: "Randomized") { pairIndex in
+        return MemoryGame<String>(numberOfPairsOfCards: Int.random(in: 2...7), theme: "Randomized", color: Color.yellow) { pairIndex in
             emojis[pairIndex]
         }
     }

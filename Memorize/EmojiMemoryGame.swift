@@ -16,7 +16,7 @@ class EmojiMemoryGame: MemoryGameVM {
     
     static func createMemoryGame() -> MemoryGame<String> {
         let emojis = ["👻","🎃","🕷","🧛🏻‍♂️"]
-        return MemoryGame<String>(numberOfPairsOfCards: emojis.count, theme: "Halloween") { pairIndex in
+        return MemoryGame<String>(numberOfPairsOfCards: emojis.count, theme: "Halloween", color: Color.orange) { pairIndex in
             emojis[pairIndex]
         }
     }

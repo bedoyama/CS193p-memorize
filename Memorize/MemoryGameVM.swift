@@ -20,6 +20,10 @@ class MemoryGameVM: ObservableObject {
     var theme: String {
         model!.theme
     }
+    
+    var color: Color {
+        model!.color
+    }
 
     // MARK: - Intent(s)
     
