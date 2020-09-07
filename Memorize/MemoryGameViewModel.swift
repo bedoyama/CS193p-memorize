@@ -14,7 +14,8 @@ class MemoryGameViewModel: ObservableObject {
     static func createMemoryGame(_ selectedTheme: Int) -> MemoryGame<String> {
         let theme = buildThemes()[selectedTheme]
         let emojis = theme.faces
-        return MemoryGame<String>(numberOfPairsOfCards: emojis.count, theme: theme.name, color: theme.color) { pairIndex in
+        let numberOfPairs = theme.pairNumberIsRandom ? Int.random(in: 2...emojis.count) : emojis.count
+        return MemoryGame<String>(numberOfPairsOfCards: numberOfPairs, theme: theme.name, color: theme.color) { pairIndex in
             emojis[pairIndex]
         }
     }
@@ -22,12 +23,12 @@ class MemoryGameViewModel: ObservableObject {
     static func buildThemes() -> [Theme] {
         var themes: [Theme] = []
         
-        themes.append(Theme(name: "Halloween", faces: ["👻","🎃","🕷","🧛🏻‍♂️"], color: Color.orange))
-        themes.append(Theme(name: "Sea Creatures", faces: ["🦑","🦀","🐙","🦞","🐠"], color: Color.green))
-        themes.append(Theme(name: "Insects", faces: ["🦗","🐛","🐝","🐞","🦋"], color: Color.yellow))
-        themes.append(Theme(name: "Wings", faces: ["🐥","🦆","🦉","🦇"], color: Color.white))
-        themes.append(Theme(name: "Flowers", faces: ["🌻","🌺","🌹","🌼","💐"], color: Color.red))
-        themes.append(Theme(name: "Random", faces: ["🎉","👠","❤️","🦎","🦑","🤠","🥶"], color: Color.blue))
+        themes.append(Theme(name: "Halloween", faces: ["👻","🎃","🕷","🧛🏻‍♂️"], color: Color.orange, pairNumberIsRandom: false))
+        themes.append(Theme(name: "Sea Creatures", faces: ["🦑","🦀","🐙","🦞","🐠"], color: Color.green, pairNumberIsRandom: false))
+        themes.append(Theme(name: "Insects", faces: ["🦗","🐛","🐝","🐞","🦋"], color: Color.yellow, pairNumberIsRandom: false))
+        themes.append(Theme(name: "Wings", faces: ["🐥","🦆","🦉","🦇"], color: Color.white, pairNumberIsRandom: false))
+        themes.append(Theme(name: "Flowers", faces: ["🌻","🌺","🌹","🌼","💐"], color: Color.red, pairNumberIsRandom: false))
+        themes.append(Theme(name: "Random", faces: ["🎉","👠","❤️","🦎","🦑","🤠","🥶"], color: Color.blue, pairNumberIsRandom: true))
 
         return themes
     }
@@ -64,5 +65,6 @@ class MemoryGameViewModel: ObservableObject {
         var name: String
         var faces: [String]
         var color: Color
+        var pairNumberIsRandom: Bool
     }
 }
