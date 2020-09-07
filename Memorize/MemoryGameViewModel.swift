@@ -23,6 +23,10 @@ class MemoryGameViewModel: ObservableObject {
         var themes: [Theme] = []
         
         themes.append(Theme(name: "Halloween", faces: ["👻","🎃","🕷","🧛🏻‍♂️"], color: Color.orange))
+        themes.append(Theme(name: "Sea Creatures", faces: ["🦑","🦀","🐙","🦞","🐠"], color: Color.green))
+        themes.append(Theme(name: "Insects", faces: ["🦗","🐛","🐝","🐞","🦋"], color: Color.yellow))
+        themes.append(Theme(name: "Wings", faces: ["🐥","🦆","🦉","🦇"], color: Color.white))
+        themes.append(Theme(name: "Flowers", faces: ["🌻","🌺","🌹","🌼","💐"], color: Color.red))
         themes.append(Theme(name: "Random", faces: ["🎉","👠","❤️","🦎","🦑","🤠","🥶"], color: Color.blue))
 
         return themes
@@ -46,6 +50,12 @@ class MemoryGameViewModel: ObservableObject {
     
     func choose(card: MemoryGame<String>.Card){
         model.choose(card: card)
+    }
+    
+    func restart(){
+        model = MemoryGameViewModel.createMemoryGame(Int.random(in: 0..<6))
+        
+        return
     }
     
     // MARK: - Auxiliary
