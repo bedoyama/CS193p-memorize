@@ -9,10 +9,10 @@
 import SwiftUI
 
 class MemoryGameViewModel: ObservableObject {
-    @Published private var model: MemoryGame<String> = createMemoryGame(0)
+    @Published private var model: MemoryGame<String> = createMemoryGame(Int.random(in: 0..<Theme.buildThemes().count))
     
     static func createMemoryGame(_ selectedTheme: Int) -> MemoryGame<String> {
-        let theme = buildThemes()[selectedTheme]
+        let theme = Theme.buildThemes()[selectedTheme]
         let emojis = theme.faces
         let numberOfPairs = theme.pairNumberIsRandom ? Int.random(in: 2...emojis.count) : emojis.count
         return MemoryGame<String>(numberOfPairsOfCards: numberOfPairs, theme: theme.name, color: theme.color) { pairIndex in
@@ -20,19 +20,6 @@ class MemoryGameViewModel: ObservableObject {
         }
     }
     
-    static func buildThemes() -> [Theme] {
-        var themes: [Theme] = []
-        
-        themes.append(Theme(name: "Halloween", faces: ["👻","🎃","🕷","🧛🏻‍♂️"], color: Color.orange, pairNumberIsRandom: false))
-        themes.append(Theme(name: "Sea Creatures", faces: ["🦑","🦀","🐙","🦞","🐠"], color: Color.green, pairNumberIsRandom: false))
-        themes.append(Theme(name: "Insects", faces: ["🦗","🐛","🐝","🐞","🦋"], color: Color.yellow, pairNumberIsRandom: false))
-        themes.append(Theme(name: "Wings", faces: ["🐥","🦆","🦉","🦇"], color: Color.white, pairNumberIsRandom: false))
-        themes.append(Theme(name: "Flowers", faces: ["🌻","🌺","🌹","🌼","💐"], color: Color.red, pairNumberIsRandom: false))
-        themes.append(Theme(name: "Random", faces: ["🎉","👠","❤️","🦎","🦑","🤠","🥶"], color: Color.blue, pairNumberIsRandom: true))
-
-        return themes
-    }
-
     // MARK: Access to the Model
     
     var cards: Array<MemoryGame<String>.Card> {
@@ -58,7 +45,7 @@ class MemoryGameViewModel: ObservableObject {
     }
     
     func restart(){
-        model = MemoryGameViewModel.createMemoryGame(Int.random(in: 0..<6))
+        model = MemoryGameViewModel.createMemoryGame(Int.random(in: 0..<Theme.buildThemes().count))
         
         return
     }
@@ -70,5 +57,19 @@ class MemoryGameViewModel: ObservableObject {
         var faces: [String]
         var color: Color
         var pairNumberIsRandom: Bool
+        
+        static func buildThemes() -> [Theme] {
+            var themes: [Theme] = []
+            
+            themes.append(Theme(name: "Cosmic", faces: ["🌞","🌜","🌎","🌊","👽","🐳","☄️"], color: Color.pink, pairNumberIsRandom: false))
+            themes.append(Theme(name: "Halloween", faces: ["👻","🎃","🕷","🧛🏻‍♂️"], color: Color.orange, pairNumberIsRandom: false))
+            themes.append(Theme(name: "Sea Creatures", faces: ["🦑","🦀","🐙","🦞","🐠"], color: Color.green, pairNumberIsRandom: false))
+            themes.append(Theme(name: "Insects", faces: ["🦗","🐛","🐝","🐞","🦋"], color: Color.yellow, pairNumberIsRandom: false))
+            themes.append(Theme(name: "Wings", faces: ["🐥","🦆","🦉","🦇"], color: Color.purple, pairNumberIsRandom: false))
+            themes.append(Theme(name: "Flowers", faces: ["🌻","🌺","🌹","🌼","💐"], color: Color.red, pairNumberIsRandom: false))
+            themes.append(Theme(name: "Random", faces: ["🎉","👠","❤️","🦎","🦑","🤠","🥶"], color: Color.blue, pairNumberIsRandom: true))
+
+            return themes
+        }
     }
 }
