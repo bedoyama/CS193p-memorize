@@ -43,9 +43,15 @@ struct CardView: View {
     }
     
     private func body(for size:CGSize) -> some View {
-        Text(card.content).cardify(isFaceUp: card.isFaceUp, isMatched: card.isMatched, color: color)
-        .aspectRatio(self.cardAspectRatio, contentMode: .fit)
-        .font(Font.system(size: fontSize(for: size)))
+        ZStack {
+            Pie(startAngle: Angle.degrees(0-90), endAngle: Angle.degrees(110-90))
+                .padding(5)
+                .opacity(0.25)
+            Text(card.content)
+        }
+            .cardify(isFaceUp: card.isFaceUp, isMatched: card.isMatched, color: color)
+            .aspectRatio(self.cardAspectRatio, contentMode: .fit)
+            .font(Font.system(size: fontSize(for: size)))
     }
 
     @ViewBuilder

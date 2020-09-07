@@ -29,9 +29,6 @@ struct Cardify: ViewModifier {
     private func front(content: Content) -> some View {
         RoundedRectangle(cornerRadius: cornerRadius).fill(Color.white)
         RoundedRectangle(cornerRadius: cornerRadius).stroke(lineWidth: edgeLineWidth)
-        Pie(startAngle: Angle.degrees(0-90), endAngle: Angle.degrees(110-90))
-            .padding(5)
-            .opacity(0.25)
         content
     }
     
