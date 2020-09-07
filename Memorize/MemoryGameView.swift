@@ -43,15 +43,7 @@ struct CardView: View {
     }
     
     private func body(for size:CGSize) -> some View {
-        ZStack {
-            if self.card.isFaceUp {
-                front(of: self.card)
-            } else {
-                if !card.isMatched {
-                    RoundedRectangle(cornerRadius: cornerRadius).fill(color)
-                }
-            }
-        }
+        Text(card.content).modifier(Cardify(isFaceUp: card.isFaceUp, isMatched: card.isMatched, color: color))
         .aspectRatio(self.cardAspectRatio, contentMode: .fit)
         .font(Font.system(size: fontSize(for: size)))
     }

@@ -20,6 +20,7 @@
 		2278839A25058ECF004CFA1E /* Array+Only.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2278839925058ECF004CFA1E /* Array+Only.swift */; };
 		2278839C2505BAD9004CFA1E /* MemoryGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2278839B2505BAD9004CFA1E /* MemoryGameViewModel.swift */; };
 		227883A0250691FE004CFA1E /* Pie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2278839F250691FE004CFA1E /* Pie.swift */; };
+		227883A22506BD1F004CFA1E /* Cardify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227883A12506BD1F004CFA1E /* Cardify.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		2278839925058ECF004CFA1E /* Array+Only.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Only.swift"; sourceTree = "<group>"; };
 		2278839B2505BAD9004CFA1E /* MemoryGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGameViewModel.swift; sourceTree = "<group>"; };
 		2278839F250691FE004CFA1E /* Pie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pie.swift; sourceTree = "<group>"; };
+		227883A12506BD1F004CFA1E /* Cardify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cardify.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 				225574BF2503BB2C00CB1637 /* SceneDelegate.swift */,
 				225574C12503BB2C00CB1637 /* MemoryGameView.swift */,
 				2278839F250691FE004CFA1E /* Pie.swift */,
+				227883A12506BD1F004CFA1E /* Cardify.swift */,
 				2278839525052384004CFA1E /* GridLayout.swift */,
 				2278839325051D58004CFA1E /* Grid.swift */,
 				2278839725052983004CFA1E /* Array+Identifiable.swift */,
@@ -167,6 +170,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				227883A22506BD1F004CFA1E /* Cardify.swift in Sources */,
 				227883A0250691FE004CFA1E /* Pie.swift in Sources */,
 				225574BE2503BB2C00CB1637 /* AppDelegate.swift in Sources */,
 				2278839C2505BAD9004CFA1E /* MemoryGameViewModel.swift in Sources */,
