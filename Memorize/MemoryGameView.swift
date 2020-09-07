@@ -22,9 +22,12 @@ struct MemoryGameView: View {
             }
             .padding()
             .foregroundColor(viewModel.color)
-            Button.init(action: {
-                self.viewModel.restart()
-            }) { Text("Restart") }
+            HStack {
+                Button.init(action: {
+                    self.viewModel.restart()
+                }) { Text("Restart") }
+                Text("Score " + String(self.viewModel.score))
+            }.padding(3)
         }
     }
 }

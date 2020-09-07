@@ -46,6 +46,10 @@ class MemoryGameViewModel: ObservableObject {
     var color: Color {
         model.color
     }
+    
+    var score: Int {
+        model.score
+    }
 
     // MARK: - Intent(s)
     
