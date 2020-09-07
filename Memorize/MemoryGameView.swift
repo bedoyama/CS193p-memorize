@@ -60,6 +60,9 @@ struct CardView: View {
     private func front(of card: MemoryGame<String>.Card) -> some View {
         RoundedRectangle(cornerRadius: cornerRadius).fill(Color.white)
         RoundedRectangle(cornerRadius: cornerRadius).stroke(lineWidth: edgeLineWidth)
+        Pie(startAngle: Angle.degrees(0-90), endAngle: Angle.degrees(110-90))
+            .padding(5)
+            .opacity(0.25)
         Text(self.card.content)
     }
     
@@ -67,7 +70,7 @@ struct CardView: View {
     
     private let cornerRadius: CGFloat = 10.0
     private let edgeLineWidth: CGFloat = 3
-    private let fontScaleFactor: CGFloat = 0.6
+    private let fontScaleFactor: CGFloat = 0.55
     private let cardAspectRatio: CGFloat = 2/3
     
     func fontSize(for size: CGSize) -> CGFloat {
@@ -77,6 +80,8 @@ struct CardView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        MemoryGameView(viewModel: MemoryGameViewModel())
+        let game = MemoryGameViewModel()
+        game.choose(card: game.cards[0])
+        return MemoryGameView(viewModel: game)
     }
 }
