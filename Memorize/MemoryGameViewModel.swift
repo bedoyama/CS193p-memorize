@@ -11,7 +11,7 @@ import SwiftUI
 class MemoryGameViewModel: ObservableObject {
     @Published private var model: MemoryGame<String> = createMemoryGame(Int.random(in: 0..<Theme.buildThemes().count))
     
-    static func createMemoryGame(_ selectedTheme: Int) -> MemoryGame<String> {
+    private static func createMemoryGame(_ selectedTheme: Int) -> MemoryGame<String> {
         let theme = Theme.buildThemes()[selectedTheme]
         let emojis = theme.faces
         let numberOfPairs = theme.pairNumberIsRandom ? Int.random(in: 2...emojis.count) : emojis.count
