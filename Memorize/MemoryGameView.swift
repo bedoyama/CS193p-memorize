@@ -48,28 +48,14 @@ struct CardView: View {
                 .padding(5)
                 .opacity(0.25)
             Text(card.content)
+                .font(Font.system(size: fontSize(for: size)))
         }
             .cardify(isFaceUp: card.isFaceUp, isMatched: card.isMatched, color: color)
-            .aspectRatio(self.cardAspectRatio, contentMode: .fit)
-            .font(Font.system(size: fontSize(for: size)))
     }
 
-    @ViewBuilder
-    private func front(of card: MemoryGame<String>.Card) -> some View {
-        RoundedRectangle(cornerRadius: cornerRadius).fill(Color.white)
-        RoundedRectangle(cornerRadius: cornerRadius).stroke(lineWidth: edgeLineWidth)
-        Pie(startAngle: Angle.degrees(0-90), endAngle: Angle.degrees(110-90))
-            .padding(5)
-            .opacity(0.25)
-        Text(self.card.content)
-    }
-    
     // MARK: - Drawing Constants
     
-    private let cornerRadius: CGFloat = 10.0
-    private let edgeLineWidth: CGFloat = 3
     private let fontScaleFactor: CGFloat = 0.55
-    private let cardAspectRatio: CGFloat = 2/3
     
     func fontSize(for size: CGSize) -> CGFloat {
         min(size.width, size.height) * fontScaleFactor
