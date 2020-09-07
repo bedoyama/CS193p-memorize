@@ -68,6 +68,8 @@ class MemoryGameViewModel: ObservableObject {
             themes.append(Theme(name: "Wings", faces: ["🐥","🦆","🦉","🦇"], color: Color.purple, pairNumberIsRandom: false))
             themes.append(Theme(name: "Flowers", faces: ["🌻","🌺","🌹","🌼","💐"], color: Color.red, pairNumberIsRandom: false))
             themes.append(Theme(name: "Random", faces: ["🎉","👠","❤️","🦎","🦑","🤠","🥶"], color: Color.blue, pairNumberIsRandom: true))
+            themes.append(Theme(name: "Random 2", faces: ["🌟","🌈","🌪","🍿","♟","📟","🎛"], color: Color.init(red: 0.8, green: 0.3, blue: 0.5), pairNumberIsRandom: true))
+            themes.append(Theme(name: "Random 3", faces: ["ℑ","✞","🀄︎","☞","✬","␕","♹","☂︎"], color: Color(red: Double.random(in: 0...1.0), green: Double.random(in: 0...1.0), blue: Double.random(in: 0...1.0)), pairNumberIsRandom: true))
 
             return themes
         }
