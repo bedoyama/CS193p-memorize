@@ -9,7 +9,7 @@
 import SwiftUI
 
 extension View {
-    func cardify(isFaceUp: Bool, isMatched: Bool, color: Color) -> some View {
-        modifier(Cardify(isFaceUp: isFaceUp, isMatched: isMatched, color: color))
+    func cardify(isFaceUp: Bool) -> some View {
+        modifier(Cardify(isFaceUp: isFaceUp))
     }
 }

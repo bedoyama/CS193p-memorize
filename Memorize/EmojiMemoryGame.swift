@@ -61,10 +61,10 @@ class EmojiMemoryGame: ObservableObject {
             
             themes.append(Theme(name: "Cosmic", faces: ["🌞","🌜","🌎","🌊","👽","🐳","☄️"], color: Color.pink, pairNumberIsRandom: false))
             themes.append(Theme(name: "Halloween", faces: ["👻","🎃","🕷","🧛🏻‍♂️"], color: Color.orange, pairNumberIsRandom: false))
-            themes.append(Theme(name: "Sea Creatures", faces: ["🦑","🦀","🐙","🦞","🐠"], color: Color.green, pairNumberIsRandom: false))
-            themes.append(Theme(name: "Insects", faces: ["🦗","🐛","🐝","🐞","🦋"], color: Color.yellow, pairNumberIsRandom: false))
+            themes.append(Theme(name: "Sea Creatures", faces: ["🦑","🦀","🐙","🦞","🐠","🦈"], color: Color.green, pairNumberIsRandom: false))
+            themes.append(Theme(name: "Insects", faces: ["🦗","🐛","🐝","🐞","🦋","🕷"], color: Color.yellow, pairNumberIsRandom: false))
             themes.append(Theme(name: "Wings", faces: ["🐥","🦆","🦉","🦇"], color: Color.purple, pairNumberIsRandom: false))
-            themes.append(Theme(name: "Flowers", faces: ["🌻","🌺","🌹","🌼","💐"], color: Color.red, pairNumberIsRandom: false))
+            themes.append(Theme(name: "Flowers", faces: ["🌻","🌺","🌹","🌼","💐","🥀"], color: Color.red, pairNumberIsRandom: false))
             themes.append(Theme(name: "Random", faces: ["🎉","👠","❤️","🦎","🦑","🤠","🥶"], color: Color.blue, pairNumberIsRandom: true))
             themes.append(Theme(name: "Random 2", faces: ["🌟","🌈","🌪","🍿","♟","📟","🎛"], color: Color.init(red: 0.8, green: 0.3, blue: 0.5), pairNumberIsRandom: true))
             themes.append(Theme(name: "Random 3", faces: ["ℑ","✞","🀄︎","☞","✬","␕","♹","☂︎"], color: Color(red: Double.random(in: 0...1.0), green: Double.random(in: 0...1.0), blue: Double.random(in: 0...1.0)), pairNumberIsRandom: true))

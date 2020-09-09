@@ -16,7 +16,7 @@ struct EmojiMemoryGameView: View {
             Text(viewModel.theme).font(Font.title).padding(4)
             Grid(viewModel.cards) { card in
                 CardView(card: card, color: self.viewModel.color).onTapGesture {
-                    withAnimation(.linear(duration: 0.25)) {
+                    withAnimation(.linear(duration: 0.65)) {
                         self.viewModel.choose(card: card)
                     }
                 }
@@ -26,7 +26,7 @@ struct EmojiMemoryGameView: View {
             .foregroundColor(viewModel.color)
             HStack {
                 Button.init(action: {
-                    withAnimation(.easeInOut(duration: 1)) {
+                    withAnimation(.easeInOut) {
                         self.viewModel.restart()
                     }
                 }) { Text("Restart") }
@@ -46,19 +46,38 @@ struct CardView: View {
         }
     }
     
+    @State private var animatedBonusRemaining: Double = 0
+    
+    private func startBonusTimeAnimation() {
+        animatedBonusRemaining = card.bonusRemaining
+        withAnimation(.linear(duration: card.bonusTimeRemaining)) {
+            animatedBonusRemaining = 0
+        }
+    }
+    
     @ViewBuilder
     private func body(for size:CGSize) -> some View {
         if card.isFaceUp || !card.isMatched {
             ZStack {
-                Pie(startAngle: Angle.degrees(0-90), endAngle: Angle.degrees(110-90))
-                    .padding(5)
-                    .opacity(0.25)
+                Group {
+                    if card.isConsumingBonusTime {
+                        Pie(startAngle: Angle.degrees(0-90), endAngle: Angle.degrees(-animatedBonusRemaining*360-90))
+                            .onAppear {
+                                self.startBonusTimeAnimation()
+                        }
+                    } else {
+                        Pie(startAngle: Angle.degrees(0-90), endAngle: Angle.degrees(-card.bonusRemaining*360-90))
+                    }
+                }
+                .padding(5)
+                .opacity(0.25)
+
                 Text(card.content)
                     .font(Font.system(size: fontSize(for: size)))
                     .rotationEffect(Angle.degrees(card.isMatched ? 360 : 0))
                     .animation(card.isMatched ? Animation.linear(duration: 1).repeatForever(autoreverses: false) : .default)
             }
-                .cardify(isFaceUp: card.isFaceUp, isMatched: card.isMatched, color: color)
+                .cardify(isFaceUp: card.isFaceUp)
                 .transition(AnyTransition.scale)
         }
     }
