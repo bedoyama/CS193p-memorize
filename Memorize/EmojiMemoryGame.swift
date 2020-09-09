@@ -46,8 +46,6 @@ class EmojiMemoryGame: ObservableObject {
     
     func restart(){
         model = EmojiMemoryGame.createMemoryGame(Int.random(in: 0..<Theme.buildThemes().count))
-        
-        return
     }
     
     // MARK: - Auxiliary
