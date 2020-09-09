@@ -1,5 +1,5 @@
 //
-//  MemoryGameViewModel.swift
+//  EmojiMemoryGame.swift
 //  Memorize
 //
 //  Created by Mauricio Bedoya on 9/6/20.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-class MemoryGameViewModel: ObservableObject {
+class EmojiMemoryGame: ObservableObject {
     @Published private var model: MemoryGame<String> = createMemoryGame(Int.random(in: 0..<Theme.buildThemes().count))
     
     private static func createMemoryGame(_ selectedTheme: Int) -> MemoryGame<String> {
@@ -45,7 +45,7 @@ class MemoryGameViewModel: ObservableObject {
     }
     
     func restart(){
-        model = MemoryGameViewModel.createMemoryGame(Int.random(in: 0..<Theme.buildThemes().count))
+        model = EmojiMemoryGame.createMemoryGame(Int.random(in: 0..<Theme.buildThemes().count))
         
         return
     }
